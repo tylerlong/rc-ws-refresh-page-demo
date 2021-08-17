@@ -1,7 +1,6 @@
 import RingCentral from '@rc-ex/core';
-// eslint-disable-next-line node/no-unpublished-import
 import WebSocketExtension from '@rc-ex/ws';
-// import waitFor from 'wait-for-async';
+import waitFor from 'wait-for-async';
 
 const rc = new RingCentral({
   clientId: process.env.RINGCENTRAL_CLIENT_ID!,
@@ -16,28 +15,27 @@ const rc = new RingCentral({
   });
   const webSocketExtension = new WebSocketExtension({});
   await rc.installExtension(webSocketExtension);
-  console.log(webSocketExtension.ws !== undefined);
 
-  // let count = 0;
-  // await webSocketExtension.subscribe(
-  //   ['/restapi/v1.0/account/~/extension/~/message-store'],
-  //   event => {
-  //     console.log(event);
-  //     count += 1;
-  //   }
-  // );
+  let count = 0;
+  await webSocketExtension.subscribe(
+    ['/restapi/v1.0/account/~/extension/~/message-store'],
+    event => {
+      console.log(event);
+      count += 1;
+    }
+  );
 
-  // await rc
-  //   .restapi()
-  //   .account()
-  //   .extension()
-  //   .companyPager()
-  //   .post({
-  //     from: {extensionNumber: '101'},
-  //     to: [{extensionNumber: '101'}], // send pager to oneself
-  //     text: 'Hello world',
-  //   });
+  await rc
+    .restapi()
+    .account()
+    .extension()
+    .companyPager()
+    .post({
+      from: {extensionNumber: '101'},
+      to: [{extensionNumber: '101'}], // send pager to oneself
+      text: 'Hello world',
+    });
 
-  // await waitFor({condition: () => count > 0});
+  await waitFor({condition: () => count > 0});
   await rc.revoke();
 })();
