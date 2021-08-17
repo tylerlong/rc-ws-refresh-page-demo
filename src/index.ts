@@ -20,7 +20,7 @@ const rc = new RingCentral({
   await webSocketExtension.subscribe(
     ['/restapi/v1.0/account/~/extension/~/message-store'],
     event => {
-      console.log(event);
+      console.log(JSON.stringify(event, null, 2));
       count += 1;
     }
   );
@@ -37,5 +37,9 @@ const rc = new RingCentral({
     });
 
   await waitFor({condition: () => count > 0});
+
+  const r = await rc.restapi().subscription().list();
+  console.log(JSON.stringify(r, null, 2));
+
   await rc.revoke();
 })();
