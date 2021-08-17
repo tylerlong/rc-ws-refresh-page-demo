@@ -14,11 +14,9 @@ const rc = new RingCentral({
     extension: process.env.RINGCENTRAL_EXTENSION!,
     password: process.env.RINGCENTRAL_PASSWORD!,
   });
-  const webSocketExtension = new WebSocketExtension({
-    // debugMode: true,
-  });
+  const webSocketExtension = new WebSocketExtension({});
   await rc.installExtension(webSocketExtension);
-  console.log(webSocketExtension.ws);
+  console.log(webSocketExtension.ws !== undefined);
 
   // let count = 0;
   // await webSocketExtension.subscribe(
