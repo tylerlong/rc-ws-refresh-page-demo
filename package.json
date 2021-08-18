@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "@types/node": "^16.6.1",
+    "buffer": "^6.0.3",
     "dotenv-override-true": "^6.2.2",
     "gts": "^3.1.0",
     "html-webpack-plugin": "^5.3.2",

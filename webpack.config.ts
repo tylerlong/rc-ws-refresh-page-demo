@@ -27,6 +27,12 @@ const config: Configuration = {
       'process.env': JSON.stringify(dotenv.config().parsed),
     }),
   ],
+  resolve: {
+    fallback: {
+      // eslint-disable-next-line node/no-unpublished-require
+      buffer: require.resolve('buffer/'),
+    },
+  },
 };
 
 export default config;
