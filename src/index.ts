@@ -53,7 +53,7 @@ const callback = (event: {}) => {
   const subscription = await webSocketExtension.subscribe(
     ['/restapi/v1.0/account/~/extension/~/message-store'],
     event => callback(event),
-    subscriptionInfo // restore old one. create new one instead if this parameter is undefined or null
+    subscriptionInfo // restore old one. new one will be created instead if this parameter is undefined or null
   );
   await localforage.setItem(subscriptionKey, subscription.subscriptionInfo);
 
