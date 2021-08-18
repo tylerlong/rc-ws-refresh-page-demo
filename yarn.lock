@@ -107,32 +107,32 @@
     form-data "^4.0.0"
     qs "^6.10.1"
 
-"@rc-ex/rate-limit@^0.7.19":
-  version "0.7.19"
-  resolved "https://registry.yarnpkg.com/@rc-ex/rate-limit/-/rate-limit-0.7.19.tgz#003ef981b8c84cb2557ec37890ecb1d7ff2f7550"
-  integrity sha512-cbb5/VZTIB9KFnPIQ2HOG4L4hOnBDIbbjR8BxhaUs99AUqIbxMpw0gshtB9SBj5qgd92HgGmO2DEyQXaalm6cw==
+"@rc-ex/rate-limit@^0.7.20":
+  version "0.7.20"
+  resolved "https://registry.yarnpkg.com/@rc-ex/rate-limit/-/rate-limit-0.7.20.tgz#d860bd49133df22b7cfaf23db886878f7cf75060"
+  integrity sha512-YgG5qGJGUFTb1UE5istYdPL6BRtVMYv5AVP1IkP+8annwNJtBU0OKYsRiLBTYv7cEctFxMxZ66bmYWlGib00iw==
   dependencies:
-    "@rc-ex/retry" "^0.7.19"
+    "@rc-ex/retry" "^0.7.20"
 
-"@rc-ex/retry@^0.7.19":
-  version "0.7.19"
-  resolved "https://registry.yarnpkg.com/@rc-ex/retry/-/retry-0.7.19.tgz#0f0957fbc771dbfa2919bdc02f795512faf4c4ac"
-  integrity sha512-cOdtlLnWooVcTlmuevyaQV6M/V98bheK1hlxhrK5qP/WRYjviOmZUsrtIqHmC5+hQn0dgyiVcHo0VTXP92Z+XA==
+"@rc-ex/retry@^0.7.20":
+  version "0.7.20"
+  resolved "https://registry.yarnpkg.com/@rc-ex/retry/-/retry-0.7.20.tgz#c8de6404fa7015c44baa97012e3c88cbd8a945b0"
+  integrity sha512-I+95Re8rq2M+f2DetE2Uj1zCptD8DM0ShUCysA8MR1p3nJCJ7gOB5CT70TlZeJhTCX65dygN5lLcKWqCBNlXMA==
   dependencies:
     wait-for-async "^0.5.0"
 
-"@rc-ex/ws@^0.9.24":
-  version "0.9.24"
-  resolved "https://registry.yarnpkg.com/@rc-ex/ws/-/ws-0.9.24.tgz#ef72d720fe34fdda281d6dc5f67562bce9c89d32"
-  integrity sha512-Yc7lVwrzo1aTVjYqYSIf3dxSrbQXYR4q/geBGCS1MHkKAL2WcFZKIM5vW6U5vox7sDI3OuipKvFS/bGbqIwONA==
+"@rc-ex/ws@^0.10.2":
+  version "0.10.2"
+  resolved "https://registry.yarnpkg.com/@rc-ex/ws/-/ws-0.10.2.tgz#3cf0a1fd741241771f9495030f9c2f2b005d11a4"
+  integrity sha512-Q9ZlYUh/tHnX0UAJh4XpG6b40M6OJSnz4lRoxj3Y+aePdZ9XBc6BsBrQmr8CFgq4nos9FAB9zbXuCn4OFgXNtw==
   dependencies:
-    "@rc-ex/rate-limit" "^0.7.19"
+    "@rc-ex/rate-limit" "^0.7.20"
     "@types/ws" "^7.4.7"
     http-status-codes "^2.1.4"
     hyperid "^2.3.1"
     isomorphic-ws "^4.0.1"
     wait-for-async "^0.5.0"
-    ws "^8.0.0"
+    ws "^8.2.0"
 
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
@@ -5167,10 +5167,10 @@ ws@^6.2.1:
   dependencies:
     async-limiter "~1.0.0"
 
-ws@^8.0.0:
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-8.1.0.tgz#75e5ec608f66d3d3934ec6dbc4ebc8a34a68638c"
-  integrity sha512-0UWlCD2s3RSclw8FN+D0zDTUyMO+1kHwJQQJzkgUh16S8d3NYON0AKCEQPffE0ez4JyRFu76QDA9KR5bOG/7jw==
+ws@^8.2.0:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-8.2.0.tgz#0b738cd484bfc9303421914b11bb4011e07615bb"
+  integrity sha512-uYhVJ/m9oXwEI04iIVmgLmugh2qrZihkywG9y5FfZV2ATeLIzHf93qs+tUNqlttbQK957/VX3mtwAS+UfIwA4g==
 
 xdg-basedir@^4.0.0:
   version "4.0.0"
