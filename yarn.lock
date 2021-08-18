@@ -121,10 +121,10 @@
   dependencies:
     wait-for-async "^0.5.0"
 
-"@rc-ex/ws@^0.9.22":
-  version "0.9.22"
-  resolved "https://registry.yarnpkg.com/@rc-ex/ws/-/ws-0.9.22.tgz#6e0d2b2df18f7bfca1d6271265cb41e72b4574c4"
-  integrity sha512-PXgOpigXkztLdyrAs3G9znC64ILDsZa2II8EPdECFEqpRlfm4McpFufjbPLQc4saifWqWLnwJrFX+eNAGmhWYw==
+"@rc-ex/ws@^0.9.24":
+  version "0.9.24"
+  resolved "https://registry.yarnpkg.com/@rc-ex/ws/-/ws-0.9.24.tgz#ef72d720fe34fdda281d6dc5f67562bce9c89d32"
+  integrity sha512-Yc7lVwrzo1aTVjYqYSIf3dxSrbQXYR4q/geBGCS1MHkKAL2WcFZKIM5vW6U5vox7sDI3OuipKvFS/bGbqIwONA==
   dependencies:
     "@rc-ex/rate-limit" "^0.7.19"
     "@types/ws" "^7.4.7"

@@ -2,11 +2,12 @@
   "license": "MIT",
   "scripts": {
     "test": "ts-node -r dotenv-override-true/config src/index.ts",
-    "serve": "webpack serve --progress"
+    "serve": "webpack serve --progress",
+    "delete": "ts-node -r dotenv-override-true/config src/delete-subscriptions.ts"
   },
   "dependencies": {
     "@rc-ex/core": "^0.9.2",
-    "@rc-ex/ws": "^0.9.22",
+    "@rc-ex/ws": "^0.9.24",
     "localforage": "^1.9.0",
     "wait-for-async": "^0.5.0"
   },
