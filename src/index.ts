@@ -2,7 +2,7 @@ import RingCentral from '@rc-ex/core';
 import WebSocketExtension, {Events} from '@rc-ex/ws';
 import localforage from 'localforage';
 import {SubscriptionInfo, TokenInfo} from '@rc-ex/core/lib/definitions';
-import {WebSocketOptions, Wsc} from '@rc-ex/ws/lib/types';
+import {Wsc} from '@rc-ex/ws/lib/types';
 
 const tokenKey = 'rc-ws-refresh-page-demo-token';
 const wscTokenKey = 'rc-ws-refresh-page-demo-wsc-token';
@@ -21,26 +21,21 @@ const callback = (event: {}) => {
 (async () => {
   // restore access token
   const token = (await localforage.getItem(tokenKey)) as TokenInfo;
-  if (token === null) {
-    const newToken = await rc.authorize({
+  if (token) {
+    rc.token = token;
+    await rc.refresh();
+  } else {
+    await rc.authorize({
       username: process.env.RINGCENTRAL_USERNAME!,
       extension: process.env.RINGCENTRAL_EXTENSION!,
       password: process.env.RINGCENTRAL_PASSWORD!,
     });
-    await localforage.setItem(tokenKey, newToken);
-  } else {
-    rc.token = token;
-    await rc.refresh();
-    await localforage.setItem(tokenKey, rc.token);
   }
+  await localforage.setItem(tokenKey, rc.token);
 
   // restore WSG wsc
   const wscToken = (await localforage.getItem(wscTokenKey)) as string;
-  const webSocketExtensionOptions: WebSocketOptions = {};
-  if (wscToken !== null) {
-    webSocketExtensionOptions.wscToken = wscToken;
-  }
-  const webSocketExtension = new WebSocketExtension(webSocketExtensionOptions);
+  const webSocketExtension = new WebSocketExtension({wscToken}); // `wscToken` will be ignored if it's null or undefined
   webSocketExtension.eventEmitter.on(Events.newWsc, async (wsc: Wsc) => {
     await localforage.setItem(wscTokenKey, wsc.token);
   });
